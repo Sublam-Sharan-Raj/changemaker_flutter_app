@@ -10,6 +10,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey =
@@ -56,24 +57,35 @@ class MainApp extends ConsumerWidget {
         }
       },
     );
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      scaffoldMessengerKey: scaffoldMessengerKey,
-      routerConfig: ref.read(routeProvider).config(),
-      locale: TranslationProvider.of(context).flutterLocale,
-      supportedLocales: AppLocaleUtils.supportedLocales,
-      localizationsDelegates: GlobalMaterialLocalizations.delegates,
-      theme: ThemeData.from(
-        colorScheme:
-            ColorScheme.fromSeed(
-              seedColor: ref.read(colorProvider).gradientMiddleColor,
-            ).copyWith(
-              surface: Colors.white,
-              error: ref.read(colorProvider).gradientStartColor,
-            ),
-        useMaterial3: true,
-        textTheme: GoogleFonts.dmSansTextTheme(),
-      ),
+    return ScreenUtilInit(
+      designSize: const Size(1284, 2778),
+      builder: (context, child) {
+        return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          scaffoldMessengerKey: scaffoldMessengerKey,
+          routerConfig: ref.read(routeProvider).config(),
+          locale: TranslationProvider.of(context).flutterLocale,
+          supportedLocales: AppLocaleUtils.supportedLocales,
+          localizationsDelegates: GlobalMaterialLocalizations.delegates,
+          theme: ThemeData.from(
+            colorScheme:
+                ColorScheme.fromSeed(
+                  seedColor: ref.read(colorProvider).gradientMiddleColor,
+                ).copyWith(
+                  surface: Colors.white,
+                  error: ref.read(colorProvider).gradientStartColor,
+                ),
+            useMaterial3: true,
+            textTheme: GoogleFonts.dmSansTextTheme(),
+          ),
+          builder: (ctx, ch) => MediaQuery(
+            data: MediaQuery.of(
+              context,
+            ).copyWith(textScaler: TextScaler.noScaling),
+            child: ch!,
+          ),
+        );
+      },
     );
   }
 }

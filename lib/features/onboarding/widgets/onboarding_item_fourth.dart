@@ -21,7 +21,7 @@ class _OnboardingItemFourthState extends ConsumerState<OnboardingItemFourth> {
       color: const Color(0xffBAF3EE),
       child: Column(
         children: [
-          const Gap(kToolbarHeight + 40),
+          const Gap(kToolbarHeight + 48),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Text(
@@ -51,8 +51,9 @@ class _OnboardingItemFourthState extends ConsumerState<OnboardingItemFourth> {
             t.onboarding.desc.d4.d41,
             style: GoogleFonts.dmSans(
               fontSize: 25,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.bold,
               color: const Color(0xff0088FF),
+              height: 1.1,
             ),
             textAlign: TextAlign.center,
           ),
@@ -63,6 +64,7 @@ class _OnboardingItemFourthState extends ConsumerState<OnboardingItemFourth> {
               fontSize: 25,
               fontWeight: FontWeight.w400,
               color: const Color(0xff625B71),
+              height: 1.1,
             ),
             textAlign: TextAlign.center,
           ),
@@ -82,6 +84,7 @@ class _OnboardingItemFourthState extends ConsumerState<OnboardingItemFourth> {
               fontSize: 42,
               fontWeight: FontWeight.w700,
               color: const Color(0xff0088FF),
+              height: 1.1,
             ),
             textAlign: TextAlign.center,
           ),

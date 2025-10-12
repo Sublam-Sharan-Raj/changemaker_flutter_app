@@ -21,7 +21,7 @@ class _OnboardingItemFirstState extends ConsumerState<OnboardingItemFirst> {
       color: const Color(0xff078B98),
       child: Column(
         children: [
-          const Gap(kToolbarHeight + 40),
+          const Gap(kToolbarHeight + 48),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Text(
