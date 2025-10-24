@@ -75,10 +75,8 @@ class _OnboardingViewState extends ConsumerState<OnboardingView> {
                     const Spacer(),
                     FloatingActionButton(
                       shape: const CircleBorder(),
-                      foregroundColor: Colors.white,
-                      backgroundColor: ref
-                          .read(colorProvider)
-                          .filledButtonColor,
+                      foregroundColor: Colors.black,
+                      backgroundColor: ref.read(colorProvider).secondaryColor,
                       elevation: 0,
                       onPressed: () {
                         if (ref.watch(onboardingPageProvider).toInt() > 2) {

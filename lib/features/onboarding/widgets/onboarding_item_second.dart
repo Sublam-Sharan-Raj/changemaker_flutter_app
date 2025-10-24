@@ -3,6 +3,7 @@ import 'package:changemaker_flutter_app/utils/assets_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,7 +22,7 @@ class _OnboardingItemSecondState extends ConsumerState<OnboardingItemSecond> {
       color: const Color(0xffF2A90E),
       child: Column(
         children: [
-          const Gap(kToolbarHeight + 48),
+          Gap(0.2.sh),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Text(
@@ -35,15 +36,13 @@ class _OnboardingItemSecondState extends ConsumerState<OnboardingItemSecond> {
               textAlign: TextAlign.center,
             ),
           ),
+          const Gap(24),
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Image.asset(
-                ref.read(assetsProvider).logo,
-              ),
+            child: Image.asset(
+              ref.read(assetsProvider).logo,
             ),
           ),
-          const Gap(16),
+          const Gap(24),
           Flexible(
             child: Text(
               t.onboarding.desc.d2,

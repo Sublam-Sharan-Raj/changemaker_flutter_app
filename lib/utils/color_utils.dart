@@ -7,6 +7,7 @@ class ColorUtils {
   Color get gradientEndColor => const Color(0xffB2FFED);
   Color get filledButtonColor => const Color(0xff087DFF);
   Color get rejectedColor => const Color(0xffF55053);
+  Color get secondaryColor => const Color(0xff30FFF0);
 }
 
 final colorProvider = Provider<ColorUtils>((ref) {

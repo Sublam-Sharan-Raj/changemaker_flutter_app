@@ -6,11 +6,13 @@ import 'package:changemaker_flutter_app/i18n/strings.g.dart';
 import 'package:changemaker_flutter_app/utils/app_utils.dart';
 import 'package:changemaker_flutter_app/utils/assets_utils.dart';
 import 'package:changemaker_flutter_app/utils/color_utils.dart';
+import 'package:colorful_iconify_flutter/icons/logos.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iconify_flutter/iconify_flutter.dart';
 
 @RoutePage()
 class LandingPage extends ConsumerStatefulWidget {
@@ -49,19 +51,18 @@ class _LandingPageState extends ConsumerState<LandingPage> {
               image: AssetImage(
                 ref.read(assetsProvider).landingPageBackground,
               ),
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
             ),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
-            spacing: 16,
             children: [
               const FittedBox(
                 child: Text(
                   'Changemaker',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 50,
+                    fontSize: 42,
                     fontWeight: FontWeight.bold,
                   ),
                   textAlign: TextAlign.center,
@@ -72,7 +73,7 @@ class _LandingPageState extends ConsumerState<LandingPage> {
                   'HIP 3D®',
                   style: GoogleFonts.dmSans(
                     color: Colors.white,
-                    fontSize: 50,
+                    fontSize: 42,
                     fontWeight: FontWeight.bold,
                   ),
                   textAlign: TextAlign.center,
@@ -81,13 +82,13 @@ class _LandingPageState extends ConsumerState<LandingPage> {
               Text(
                 t.login.reprogramYourSub,
                 style: GoogleFonts.dmSans(
-                  color: Colors.white,
+                  color: ref.read(colorProvider).secondaryColor,
                   fontSize: 24,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.bold,
                 ),
                 textAlign: TextAlign.center,
               ),
-              const Gap(50),
+              Gap(300.h),
               SizedBox(
                 width: double.infinity,
                 height: 56,
@@ -105,6 +106,7 @@ class _LandingPageState extends ConsumerState<LandingPage> {
                   ),
                 ),
               ),
+              const Gap(16),
               SizedBox(
                 width: double.infinity,
                 height: 56,
@@ -113,8 +115,8 @@ class _LandingPageState extends ConsumerState<LandingPage> {
                     ref.read(routeProvider).navigate(RegisterPageRoute());
                   },
                   style: FilledButton.styleFrom(
-                    backgroundColor: ref.read(colorProvider).filledButtonColor,
-                    foregroundColor: Colors.white,
+                    backgroundColor: ref.read(colorProvider).secondaryColor,
+                    foregroundColor: Colors.black,
                     elevation: 10,
                   ),
                   child: Text(
@@ -123,6 +125,7 @@ class _LandingPageState extends ConsumerState<LandingPage> {
                   ),
                 ),
               ),
+              const Gap(16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 spacing: 32,
@@ -140,7 +143,7 @@ class _LandingPageState extends ConsumerState<LandingPage> {
                           backgroundColor: Colors.white,
                           foregroundColor: Colors.black,
                         ),
-                        child: const Icon(FontAwesomeIcons.google),
+                        child: const Iconify(Logos.google_icon),
                       ),
                     ),
                   ),
@@ -155,7 +158,7 @@ class _LandingPageState extends ConsumerState<LandingPage> {
                           backgroundColor: Colors.white,
                           foregroundColor: Colors.black,
                         ),
-                        child: const Icon(FontAwesomeIcons.facebook),
+                        child: const Iconify(Logos.facebook),
                       ),
                     ),
                   ),
@@ -172,12 +175,13 @@ class _LandingPageState extends ConsumerState<LandingPage> {
                           backgroundColor: Colors.white,
                           foregroundColor: Colors.black,
                         ),
-                        child: const Icon(FontAwesomeIcons.apple),
+                        child: const Iconify(Logos.apple),
                       ),
                     ),
                   ),
                 ],
               ),
+              const Gap(16),
               TextButton(
                 onPressed: () {
                   ref
@@ -191,7 +195,7 @@ class _LandingPageState extends ConsumerState<LandingPage> {
                       TextSpan(
                         text: t.login.forgotPassword,
                         style: const TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                         ),
@@ -200,7 +204,7 @@ class _LandingPageState extends ConsumerState<LandingPage> {
                       TextSpan(
                         text: t.login.clickHereToReset,
                         style: const TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontWeight: FontWeight.w400,
                           fontSize: 16,
                         ),
@@ -225,6 +229,9 @@ class _LandingPageState extends ConsumerState<LandingPage> {
                   LocaleSettings.setLocaleRaw(value!);
                   setState(() {});
                 },
+                iconEnabledColor: Colors.white,
+                style: GoogleFonts.dmSans(color: Colors.white),
+                dropdownColor: ref.read(colorProvider).gradientStartColor,
               ),
             ],
           ),

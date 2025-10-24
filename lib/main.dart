@@ -58,7 +58,7 @@ class MainApp extends ConsumerWidget {
       },
     );
     return ScreenUtilInit(
-      designSize: const Size(1284, 2778),
+      designSize: const Size(393, 852),
       builder: (context, child) {
         return MaterialApp.router(
           debugShowCheckedModeBanner: false,
