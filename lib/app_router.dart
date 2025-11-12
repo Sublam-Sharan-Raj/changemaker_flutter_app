@@ -25,6 +25,7 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: OnboardingViewRoute.page, path: '/onboarding'),
     AutoRoute(page: LandingPageRoute.page, path: '/landing'),
     AutoRoute(page: PasswordResetPageRoute.page, path: '/password-reset'),
+    AutoRoute(page: ProfileRoute.page, path: '/set-profile'),
   ];
 
   @override

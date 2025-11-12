@@ -81,7 +81,7 @@ class _OnboardingViewState extends ConsumerState<OnboardingView> {
                       onPressed: () {
                         if (ref.watch(onboardingPageProvider).toInt() > 2) {
                           ref.read(routeProvider).replaceAll([
-                            const HomePageRoute(),
+                            const ProfileRoute(),
                           ]);
                         } else {
                           _pageController.animateToPage(

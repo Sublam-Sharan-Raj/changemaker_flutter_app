@@ -140,7 +140,7 @@ class _LandingPageState extends ConsumerState<LandingPage> {
                               .signInUsingGoogle();
                         },
                         style: FilledButton.styleFrom(
-                          backgroundColor: Colors.white,
+                          backgroundColor: Colors.transparent,
                           foregroundColor: Colors.black,
                         ),
                         child: const Iconify(Logos.google_icon),
@@ -155,7 +155,7 @@ class _LandingPageState extends ConsumerState<LandingPage> {
                           AppUtils.showSnackBar('Comming soon');
                         },
                         style: FilledButton.styleFrom(
-                          backgroundColor: Colors.white,
+                          backgroundColor: Colors.transparent,
                           foregroundColor: Colors.black,
                         ),
                         child: const Iconify(Logos.facebook),
@@ -172,7 +172,7 @@ class _LandingPageState extends ConsumerState<LandingPage> {
                               .signInUsingApple();
                         },
                         style: FilledButton.styleFrom(
-                          backgroundColor: Colors.white,
+                          backgroundColor: Colors.transparent,
                           foregroundColor: Colors.black,
                         ),
                         child: const Iconify(Logos.apple),

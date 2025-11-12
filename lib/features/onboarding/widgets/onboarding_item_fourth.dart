@@ -46,7 +46,7 @@ class _OnboardingItemFourthState extends ConsumerState<OnboardingItemFourth> {
               ),
             ),
           ),
-          const Gap(16),
+          const Gap(24),
           Text(
             t.onboarding.desc.d4.d41,
             style: GoogleFonts.dmSans(
